@@ -14,7 +14,7 @@ let products = [
         inventory: 20
     },
     {
-        sku: "P03"
+        sku: "P03",
         name: "Apples",
         category: "groceries",
         price: 3,
