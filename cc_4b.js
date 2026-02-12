@@ -58,6 +58,52 @@ case "apparel":
 }
 product.promoPrice=product.price * (1-discount)
 
-console.log(products)
+console.log(product);
+}
 
+//customer type discount
+let customerType = "student";
+let extraDiscount = 0;
+
+if (customerType === "student") {
+    extraDiscount = 0.05;
+}
+else if (customerType === "senior") {
+    extraDiscount === 0.07;
+}
+else {
+    extraDiscount = 0;
+}
+
+//checkout simulation
+
+for (let customerNumber = 1; customerNumber <= 3; customerNumber++) {
+    let total = 0;
+
+    for (const product of products) {
+        if (product.inventory > 0) {
+            total = total +product.promoPrice;
+            product.inventory = product.inventory - 1;
+        }
+    }
+total = total - (total - extraDiscount);
+
+console.log("Customer" + customerNumber + "total: $" +total.toFixed(2));
+}
+
+//single product in loop
+
+let sampleProduct = products[0];
+
+for (let key in sampleProduct) {
+    console.log(key + ": " + sampleProduct[key]);
+}
+
+//onject entries report
+for (const product of products) {
+    console.log("Product");
+
+    for (const [key, value] of Object.entries(product)) {
+        console.log(key + ": " + value);
+    }
 }
