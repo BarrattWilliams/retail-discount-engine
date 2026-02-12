@@ -99,7 +99,7 @@ for (let key in sampleProduct) {
     console.log(key + ": " + sampleProduct[key]);
 }
 
-//onject entries report
+//object entries report
 for (const product of products) {
     console.log("Product");
 
